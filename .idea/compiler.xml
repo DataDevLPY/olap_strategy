@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="olap-data-strategy" />
+        <module name="olap-redis-strategy" />
+        <module name="olap-hbase-strategy" />
+        <module name="olap-clickhouse-strategy" />
+        <module name="olap-mysql-strategy" />
+        <module name="olap-service-strategy" />
+        <module name="olap-elasticsearch-strategy" />
+        <module name="olap-tidb-strategy" />
+        <module name="olap-doris-strategy" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
