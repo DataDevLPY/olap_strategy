@@ -11,35 +11,52 @@ import cn.data.developer.strategy.config.EmEngine;
  **/
 public class EngineUtils {
 
+    public static StringBuilder engine = new StringBuilder();
 
+    /**
+     * Log引擎
+     */
     public static String getLog(){
-        StringBuilder engine = new StringBuilder();
-        engine.append("engine").append(SignalConstant.EQUAL).append("Log");
+        engine.append("engine").append(SignalConstant.EQUAL).append(EmEngine.Log);
         engine.append(SignalConstant.SPACE);
         return engine.toString();
     }
 
+    /**
+     * Memory引擎
+     */
     public String getMemory(){
 
         return "";
     }
 
+    /**
+     * MergeTree引擎
+     */
     public static String getMergeTree(){
-
-
-
-
-        return "";
+        engine.append("engine").append(SignalConstant.EQUAL).append(EmEngine.MergeTree);
+        engine.append(SignalConstant.LEFT_BRACKET).append(SignalConstant.RIGHT_BRACKET);
+        engine.append(SignalConstant.SPACE);
+        return engine.toString();
     }
 
+    /**
+     *
+     */
     public static String getMergeTree(Boolean isReplicated){
 
         return "";
     }
 
-    public static String getReplacingMergeTree(){
 
-        return "";
+    /**
+     * ReplacingMergeTree引擎
+     */
+    public static String getReplacingMergeTree(){
+        engine.append("engine").append(SignalConstant.EQUAL).append(EmEngine.ReplacingMergeTree);
+        engine.append(SignalConstant.LEFT_BRACKET).append(SignalConstant.RIGHT_BRACKET);
+        engine.append(SignalConstant.SPACE);
+        return engine.toString();
     }
 
     public static String getReplacingMergeTree(Boolean isReplicated){
@@ -58,5 +75,7 @@ public class EngineUtils {
     }
 
 
-
+    public static void main(String[] args) {
+        System.out.println(getReplacingMergeTree());
+    }
 }

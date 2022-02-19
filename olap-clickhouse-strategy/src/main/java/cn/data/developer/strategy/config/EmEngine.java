@@ -7,11 +7,11 @@ package cn.data.developer.strategy.config;
  **/
 public enum EmEngine {
 
-    mergeTree,
-    replacingMergeTree,
-    aggregateMergeTree,
-    log,
-    memory;
+    MergeTree,
+    ReplacingMergeTree,
+    AggregateMergeTree,
+    Log,
+    Memory;
 
     public static EmEngine nameOf(String name){
 

@@ -64,9 +64,20 @@ public class ClickHouseParam implements Serializable {
      */
     private String operation;
 
+    /**
+     * 主键
+     */
     private String primaryBy;
 
+    /**
+     * 排序
+     */
     private String orderBy;
+
+    /**
+     * SQL语句
+     */
+    private String sql;
 
 
 }

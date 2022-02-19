@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
+
 /**
  * @author: Peiyang
  * @Date: 2022/2/3 8:39 下午
@@ -79,15 +80,18 @@ public class ClickHouseUtils {
         create = new StringBuilder(create.substring(0, create.length() - 1));
         create.append(SignalConstant.SPACE).append(SignalConstant.RIGHT_BRACKET).append(SignalConstant.SPACE);
 
-        if ( EmEngine.log.equals(EmEngine.nameOf(param.getEngine()))) {
+        //根据不同引擎，建立表配置
+        if ( EmEngine.Log.equals(EmEngine.nameOf(param.getEngine()))) {
             create.append(EngineUtils.getLog());
-        } else if (EmEngine.mergeTree.equals(EmEngine.nameOf(param.getEngine()))) {
+        } else if (EmEngine.MergeTree.equals(EmEngine.nameOf(param.getEngine()))) {
             create.append(EngineUtils.getMergeTree());
-        } else if (EmEngine.replacingMergeTree.equals(EmEngine.nameOf(param.getEngine()))) {
+        } else if (EmEngine.ReplacingMergeTree.equals(EmEngine.nameOf(param.getEngine()))) {
             create.append(EngineUtils.getReplacingMergeTree());
-        } else if (EmEngine.aggregateMergeTree.equals(EmEngine.nameOf(param.getEngine()))) {
+        } else if (EmEngine.AggregateMergeTree.equals(EmEngine.nameOf(param.getEngine()))) {
             create.append(EngineUtils.getAggregateMergeTree());
         }
+
+
         if (!param.getOrderBy().isEmpty()){
             create.append("ORDER BY ").append(param.getOrderBy());
         }
@@ -101,8 +105,7 @@ public class ClickHouseUtils {
 //        }
         create.append(SignalConstant.SEMICOLON);
 
-        log.error(LOG_PRE + "操作语句："+create);
-        System.out.println(LOG_PRE + "操作语句："+create);
+        log.info(LOG_PRE + "操作语句："+create);
         return create.toString();
     }
 
